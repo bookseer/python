@@ -28,4 +28,3 @@ There is no warranty; not even for merchantability or fitness for a particular p
     - See the «Commons Deed» of the license in the file [LICENSE-CC-BY-COMMONS-DEED.txt](https://github.com/askras/trypython/blob/main/LICENSE-CC-BY-COMMONS-DEED.txt) for details.
 
     - See the «Legal Code» of the license in the file [LICENSE-CC-BY-LEGAL-CODE.txt](https://github.com/askras/trypython/blob/main/LICENSE-CC-BY-LEGAL-CODE.txt)  for details.
-
