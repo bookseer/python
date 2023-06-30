@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "trypython"
+version = "0.1.0"
+description = "A collection of educational materials for learning the Python programming language"
+authors = ["Alexander Krasnikov aka askras <askras@trypython.pro>"]
+license = "BSD-3-Clause"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+jupyter = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+autopep8 = "^2.0.2"
+black = "^23.3.0"
+bandit = "^1.7.5"
+mypy = "^1.4.1"
+pre-commit = "^3.3.3"
+pylint = "^2.17.4"
+pytest = "^7.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

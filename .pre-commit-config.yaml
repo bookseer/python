@@ -1,0 +1,71 @@
+default_language_version:
+    python: python3.11
+
+# Set to true to have pre-commit stop running hooks after the first failure
+fail_fast: false #true
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.3.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-xml
+      - id: check-yaml
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: fix-encoding-pragma
+      - id: name-tests-test
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+      - id: no-commit-to-branch
+        args: [--branch, master, --branch, beta, --branch, alpha, --branch, develop]
+
+  - repo: local
+    hooks:
+
+      - id: bandit
+        name: bandit
+        entry: bandit
+        description: "Security code analysis with bandit."
+        types: [python]
+        language: python
+        language_version: python3.11
+        stages: [commit]
+        always_run: true
+        args: ["./"]
+
+      - id: pylint
+        name: pylint
+        entry: pylint
+        description: "Static code analysis with pylint."
+        types: [python]
+        language: python
+        language_version: python3.11
+        stages: [commit]
+        always_run: true
+        args: [ "./", "--rcfile=.pylintrc", "--exit-zero", "--py-version=3.11" ]
+
+      - id: mypy
+        entry: mypy
+        name: mypy
+        description: "Static type checking with mypy."
+        language: python
+        types: [python]
+        pass_filenames: false
+        always_run: true
+        args: ["./"]
+
+      - id: pytest
+        entry: pytest
+        name: pytest
+        description: "Testing the code with pytest and doctest"
+        language: python
+        types: [python]
+        pass_filenames: false
+        always_run: true
+        args: ["--doctest-modules"]
