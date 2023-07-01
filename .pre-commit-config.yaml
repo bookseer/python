@@ -68,5 +68,4 @@ repos:
         types: [python]
         pass_filenames: false
         always_run: true
-        files: (_tests.py)$
-        args: [--doctest-modules, --tb=line]
+        args: [--tb=line]
