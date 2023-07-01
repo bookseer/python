@@ -37,7 +37,7 @@ repos:
         language_version: python3.11
         stages: [commit]
         always_run: true
-        args: ["./"]
+        args: [./]
 
       - id: pylint
         name: pylint
@@ -48,7 +48,7 @@ repos:
         language_version: python3.11
         stages: [commit]
         always_run: true
-        args: [ "./", "--rcfile=.pylintrc", "--exit-zero", "--py-version=3.11" ]
+        args: [./, --rcfile=.pylintrc, --exit-zero, --py-version=3.11]
 
       - id: mypy
         entry: mypy
@@ -58,7 +58,7 @@ repos:
         types: [python]
         pass_filenames: false
         always_run: true
-        args: ["./"]
+        args: [./, ]
 
       - id: pytest
         entry: pytest
@@ -68,4 +68,5 @@ repos:
         types: [python]
         pass_filenames: false
         always_run: true
-        args: ["--doctest-modules"]
+        files: (_tests.py)$
+        args: [--doctest-modules, --tb=line]
