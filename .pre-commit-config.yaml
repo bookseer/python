@@ -30,7 +30,7 @@ repos:
 
       - id: bandit
         name: bandit
-        entry: bandit
+        entry: bandit -c .banditrc -r ./
         description: "Security code analysis with bandit."
         types: [python]
         language: python
