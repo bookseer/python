@@ -50,26 +50,27 @@ def get_usage_time(number: int = 1,
     Decorating an existing function:
 
     >>> import time
-    >>> def f(n):
+    >>> def sleep_func(n):
     ...     time.sleep(n)
     ...     return n
     ...
-    >>> f1 = get_usage_time()(f)
-    >>> print(f"The function was executed for {f1(2)} seconds")
+    >>> get_usage_time_sleep_func = get_usage_time()(sleep_func)
+    >>> time_sleep_func = get_usage_time_sleep_func(2)
+    >>> print(f"The function was executed for {time_sleep_func} seconds")
     The function was executed for 2.0 seconds
-    >>> get_usage_time()(f)(4)
+    >>> get_usage_time(number=5)(sleep_func)(4)
     4.0
 
     Measuring the running time of a function for different parameter values:
 
     >>> import time
-    >>> def f(n):
+    >>> def sleep_func(n):
     ...     time.sleep(n)
     ...     return n
     ...
     >>> for n in range(1,4):
-    ...    f2 = get_usage_time(number=2)(f)
-    ...    print(f2(n))
+    ...    get_usage_time_sleep_func = get_usage_time(number=2)(sleep_func)
+    ...    print(get_usage_time_sleep_func(n))
     1.0
     2.0
     3.0
@@ -77,14 +78,13 @@ def get_usage_time(number: int = 1,
     Using the `setup` option:
 
     >>> import time
-    >>> def f(n):
+    >>> def sleep_func(n):
     ...     time.sleep(n)
     ...     return n
     ...
-    >>> number = 5
     >>> setup = "print('Start setup'); time.sleep(10); print('End setup')"
-    >>> f3 =  get_usage_time(number=number, setup=setup)(f)
-    >>> print(f3(3))
+    >>> get_usage_time_sleep_func = get_usage_time(setup=setup)(sleep_func)
+    >>> print(get_usage_time_sleep_func(3))
     Start setup
     End setup
     3.0
@@ -93,13 +93,13 @@ def get_usage_time(number: int = 1,
 
     >>> import time
     >>> @get_usage_time(number=2, setup="print('Start');", ndigits=0)
-    ... def f(n):
+    ... def sleep_func(n):
     ...    time.sleep(n)
     ...    return n
     ...
-    >>> t = f(3)
+    >>> time_sleep_func = sleep_func(3)
     Start
-    >>> print(t)
+    >>> print(time_sleep_func)
     3.0
     """
 
@@ -119,10 +119,10 @@ def get_usage_time(number: int = 1,
 if __name__ == "__main__":
     import time
 
-    def f(n):
+    def sleep_func(n):
         time.sleep(n)
         return n
 
     for i in range(1, 4):
-        f1 = get_usage_time(number=3)(f)
-        print(f1(i))
+        time_sleep_func = get_usage_time(number=3)(sleep_func)
+        print(time_sleep_func(i))
