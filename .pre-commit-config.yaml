@@ -67,5 +67,6 @@ repos:
         language: python
         types: [python]
         pass_filenames: false
-        always_run: true
+        #always_run: true
+        stages: [commit, push]
         args: [--doctest-modules, --tb=line]
