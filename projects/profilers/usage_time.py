@@ -108,8 +108,8 @@ def get_usage_time(number: int = 1,
         def wrapper(*args, **kwargs) -> float:
             usage_time = timeit.timeit(
                 lambda: func(*args, **kwargs),
-                setup=setup,  # code to be executed once at the beginning of the experiment
-                number=number,  # number of repetitions
+                setup=setup,
+                number=number,
             )
             return round(usage_time / number, ndigits)
         return wrapper
