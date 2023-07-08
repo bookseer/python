@@ -20,7 +20,7 @@ import typing
 def get_usage_time(number: int = 1,
                    setup: str = "pass",
                    ndigits: int = 3) -> typing.Callable:
-    """Decorator for measuring the speed of the function (in seconds)q
+    """Decorator for measuring the speed of the function (in seconds)
 
     Parameters
     ----------
