@@ -61,11 +61,10 @@ repos:
 
       - id: pytest
         entry: pytest
-        name: pytest
+        name: pytest --doctest-modules --tb=line --picked
         description: "Testing the code with pytest and doctest"
         language: python
         types: [python]
         pass_filenames: false
-        #always_run: true
+        always_run: true
         stages: [commit, push]
-        args: [--doctest-modules, --tb=line]
