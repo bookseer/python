@@ -76,11 +76,12 @@ def quadratic_equation(
     ((-1-3j), (-1+3j))
     """
 
-    discriminant = b**2 - 4 * a * c
+    discriminant = b ** 2 - 4 * a * c
     # Depending on the sign of the discriminant, we get a real or complex root
 
     sqrt_discriminant = (
-        math.sqrt(discriminant) if discriminant >= 0 else cmath.sqrt(discriminant)
+        math.sqrt(discriminant) if discriminant >= 0
+        else cmath.sqrt(discriminant)
     )
 
     x_1 = (-b - sqrt_discriminant) / (2 * a)
@@ -90,7 +91,8 @@ def quadratic_equation(
 
 
 if __name__ == "__main__":
-    print("Various cases that arise when solving quadratic equations.", end="\n\n")
+    print("Various cases that arise when solving quadratic equations.")
+    print("\n\n")
 
     print("1. Equation x^2 + 2x + 10 = 0 has two real roots:")
     x1, x2 = quadratic_equation(1, -1, -6)

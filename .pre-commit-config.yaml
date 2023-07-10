@@ -41,14 +41,13 @@ repos:
 
       - id: pylint
         name: pylint
-        entry: pylint
+        entry: pylint --rcfile=.pylintrc ./**/*.py
         description: "Static code analysis with pylint."
         types: [python]
         language: python
         language_version: python3.11
         stages: [commit]
         always_run: true
-        args: [./, --rcfile=.pylintrc, --exit-zero, --py-version=3.11]
 
       - id: mypy
         entry: mypy
