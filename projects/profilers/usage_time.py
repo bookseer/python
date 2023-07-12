@@ -17,16 +17,18 @@ import timeit
 import typing
 
 
-def get_usage_time(number: int = 1,
-                   setup: str = "pass",
-                   ndigits: int = 3) -> typing.Callable:
+def get_usage_time(
+        number: int = 1,
+        setup: str = 'pass',
+        ndigits: int = 3
+) -> typing.Callable:
     """Decorator for measuring the speed of the function (in seconds)
 
     Parameters
     ----------
     number : int, default=1
         Number of code repetitions.
-    setup : str, default="pass"
+    setup : str, default='pass'
         Code executed once before timing.
     ndigits : int, default=3
         Number of decimal places in the returned value.
@@ -56,7 +58,7 @@ def get_usage_time(number: int = 1,
     ...
     >>> get_usage_time_sleep_func = get_usage_time()(sleep_func)
     >>> time_sleep_func = get_usage_time_sleep_func(2)
-    >>> print(f"The function was executed for {time_sleep_func} seconds")
+    >>> print(f'The function was executed for {time_sleep_func} seconds')
     The function was executed for 2.0 seconds
     >>> get_usage_time(number=5)(sleep_func)(4)
     4.0
@@ -82,7 +84,7 @@ def get_usage_time(number: int = 1,
     ...     time.sleep(n)
     ...     return n
     ...
-    >>> setup = "print('Start setup'); time.sleep(10); print('End setup')"
+    >>> setup = 'print("Start setup"); time.sleep(10); print("End setup")'
     >>> get_usage_time_sleep_func = get_usage_time(setup=setup)(sleep_func)
     >>> print(get_usage_time_sleep_func(3))
     Start setup
@@ -92,7 +94,7 @@ def get_usage_time(number: int = 1,
     Decoding the generated function:
 
     >>> import time
-    >>> @get_usage_time(number=2, setup="print('Start');", ndigits=0)
+    >>> @get_usage_time(number=2, setup='print("Start");', ndigits=0)
     ... def sleep_func(n):
     ...    time.sleep(n)
     ...    return n
@@ -116,7 +118,7 @@ def get_usage_time(number: int = 1,
     return decorator
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     import time
 
     def sleep_func(n):

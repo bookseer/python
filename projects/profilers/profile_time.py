@@ -17,16 +17,18 @@ import timeit
 import typing
 
 
-def profile_time(number: int = 1,
-                   setup: str = "pass",
-                   ndigits: int = 3) -> typing.Callable:
+def profile_time(
+        number: int = 1,
+        setup: str = 'pass',
+        ndigits: int = 3
+) -> typing.Callable:
     """Decorator for profiling the speed of the function (in seconds)
 
     Parameters
     ----------
     number : int, default=1
         Number of code repetitions.
-    setup : str, default="pass"
+    setup : str, default='pass'
         Code executed once before timing.
     ndigits : int, default=3
         Number of decimal places in the returned value.
@@ -86,7 +88,7 @@ def profile_time(number: int = 1,
     ...     time.sleep(n)
     ...     return n
     ...
-    >>> setup = "print('Start setup'); time.sleep(10); print('End setup')"
+    >>> setup = 'print("Start setup"); time.sleep(10); print("End setup")'
     >>> profile_time_sleep_func = profile_time(setup=setup)(sleep_func)
     >>> print(profile_time_sleep_func(3))
     Start setup
@@ -97,7 +99,7 @@ def profile_time(number: int = 1,
     Decoding the generated function:
 
     >>> import time
-    >>> @profile_time(number=2, setup="print('Start');", ndigits=0)
+    >>> @profile_time(number=2, setup='print("Start");', ndigits=0)
     ... def sleep_func(n):
     ...    time.sleep(n)
     ...    return n
@@ -119,16 +121,16 @@ def profile_time(number: int = 1,
             usage_time = round(usage_time / number, ndigits)
             #get func's params as string
             position_args = [str(param) for param in args]
-            named_args = [f"{str(k)}={str(v)}" for k, v in kwargs.items()]
-            all_args = ", ".join(position_args + named_args)
-            print(f"The function {func.__name__}({all_args})",
-                  f"was executed for {usage_time} seconds.")
+            named_args = [f'{str(k)}={str(v)}' for k, v in kwargs.items()]
+            all_args = ', '.join(position_args + named_args)
+            print(f'The function {func.__name__}({all_args})',
+                  f'was executed for {usage_time} seconds.')
             return func(*args, **kwargs)
         return wrapper
     return decorator
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     import time
 
     def sleep_func(n):

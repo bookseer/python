@@ -71,25 +71,25 @@ def get_syracuse_sequence_iterative(n: int) -> list[int]:
     return syracuse_sequence
 
 
-if __name__ == "__main__":
-    print("Examples of the Syracuse sequence.", end="\n\n")
+if __name__ == '__main__':
+    print('Examples of the Syracuse sequence.', end='\n\n')
 
     test_n = 0
-    print(f"For n = {test_n}, the Syracuse sequence has the form:")
-    print(get_syracuse_sequence_iterative(test_n), end="\n\n")
+    print(f'For n = {test_n}, the Syracuse sequence has the form:')
+    print(get_syracuse_sequence_iterative(test_n), end='\n\n')
 
     test_n = 1
-    print(f"For n = {test_n}, the Syracuse sequence has the form:")
-    print(get_syracuse_sequence_iterative(test_n), end="\n\n")
+    print(f'For n = {test_n}, the Syracuse sequence has the form:')
+    print(get_syracuse_sequence_iterative(test_n), end='\n\n')
 
     test_n = 5
-    print(f"For n = {test_n}, the Syracuse sequence has the form:")
-    print(get_syracuse_sequence_iterative(test_n), end="\n\n")
+    print(f'For n = {test_n}, the Syracuse sequence has the form:')
+    print(get_syracuse_sequence_iterative(test_n), end='\n\n')
 
     test_n = 27
-    print(f"For n = {test_n}, the Syracuse sequence has the form:")
-    print(get_syracuse_sequence_iterative(test_n), end="\n\n")
+    print(f'For n = {test_n}, the Syracuse sequence has the form:')
+    print(get_syracuse_sequence_iterative(test_n), end='\n\n')
 
     test_n = 150
-    print(f"For n = {test_n}, the Syracuse sequence has the form:")
-    print(get_syracuse_sequence_iterative(test_n), end="\n\n")
+    print(f'For n = {test_n}, the Syracuse sequence has the form:')
+    print(get_syracuse_sequence_iterative(test_n), end='\n\n')
