@@ -78,7 +78,6 @@ def quadratic_equation(
 
     discriminant = b**2 - 4 * a * c
     # Depending on the sign of the discriminant, we get a real or complex root
-
     if discriminant < 0:
         sqrt_discriminant = cmath.sqrt(discriminant)
     else:
