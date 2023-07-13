@@ -28,6 +28,16 @@ repos:
   - repo: local
     hooks:
 
+      - id: black
+        name: black
+        entry: black -S ./
+        description: "Uncompromising Python code formatter. "
+        types: [python]
+        language: python
+        language_version: python3.11
+        stages: [commit]
+        always_run: true
+
       - id: bandit
         name: bandit
         entry: bandit -c .banditrc -r ./
