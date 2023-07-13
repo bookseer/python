@@ -7,7 +7,9 @@ Collatz Conjecture or the (3n + 1) Problem
 
 import time
 
-from syracuse_sequence_iterative import get_syracuse_sequence_iterative as get_syracuse_sequence
+from syracuse_sequence_iterative import (
+    get_syracuse_sequence_iterative as get_syracuse_sequence,
+)
 
 
 def main():
@@ -33,7 +35,6 @@ def main():
 
 
 if __name__ == '__main__':
-
     annotation = '''\
 To explain the essence of the hypothesis, consider the following
 sequence of numbers, called the Syracuse sequence.

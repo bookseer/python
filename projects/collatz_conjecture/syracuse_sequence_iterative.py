@@ -12,6 +12,7 @@ Website: trypython.pro
 License: BSD 3 clause
 """
 
+
 def get_syracuse_sequence_iterative(n: int) -> list[int]:
     """Syracuse_sequence. Iterative implementation.
 
@@ -59,13 +60,14 @@ def get_syracuse_sequence_iterative(n: int) -> list[int]:
     [150, 75, 226, 113, 340, 170, 85, 256, 128, 64, 32, 16, 8, 4, 2, 1]
     """
 
-    if n < 1: return []
+    if n < 1:
+        return []
 
     syracuse_sequence = [n]
     while n != 1:
-        if n % 2 == 0: # n is even
+        if n % 2 == 0:  # n is even
             n = n // 2
-        else: # n is odd
+        else:  # n is odd
             n = 3 * n + 1
         syracuse_sequence.append(n)
     return syracuse_sequence

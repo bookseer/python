@@ -12,6 +12,7 @@ Website: trypython.pro
 License: BSD 3 clause
 """
 
+
 def get_syracuse_sequence_recursive(n: int) -> list[int]:
     """Syracuse_sequence. Recursive implementation.
 
