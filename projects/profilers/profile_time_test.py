@@ -13,6 +13,7 @@ def sleep_func(n):
     time.sleep(n)
     return n
 
+
 def test_profile_time():
     """Testing get_usage_time"""
     profile_time_sleep_func = profile_time()(sleep_func)

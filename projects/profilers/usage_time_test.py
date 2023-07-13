@@ -13,6 +13,7 @@ def sleep_func(n):
     time.sleep(n)
     return n
 
+
 def test_get_usage_time():
     """Testing get_usage_time"""
     get_usage_time_sleep_func = get_usage_time()(sleep_func)

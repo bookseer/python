@@ -18,9 +18,7 @@ import typing
 
 
 def profile_time(
-        number: int = 1,
-        setup: str = 'pass',
-        ndigits: int = 3
+    number: int = 1, setup: str = 'pass', ndigits: int = 3
 ) -> typing.Callable:
     """Decorator for profiling the speed of the function (in seconds)
 
@@ -119,14 +117,18 @@ def profile_time(
                 number=number,
             )
             usage_time = round(usage_time / number, ndigits)
-            #get func's params as string
+            # get func's params as string
             position_args = [str(param) for param in args]
             named_args = [f'{str(k)}={str(v)}' for k, v in kwargs.items()]
             all_args = ', '.join(position_args + named_args)
-            print(f'The function {func.__name__}({all_args})',
-                  f'was executed for {usage_time} seconds.')
+            print(
+                f'The function {func.__name__}({all_args})',
+                f'was executed for {usage_time} seconds.',
+            )
             return func(*args, **kwargs)
+
         return wrapper
+
     return decorator
 
 
