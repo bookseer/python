@@ -90,17 +90,31 @@ def quadratic_equation(
 
 
 if __name__ == '__main__':
-    print('Various cases that arise when solving quadratic equations.')
-    print('\n\n')
+    import sys
 
-    print('1. Equation x^2 + 2x + 10 = 0 has two real roots:')
+    print('Enter the coefficients of the quadratic equation:')
+    print()
+    print('Enter a quadratic coefficient of the quadratic equation:')
+    response_a = input('> ')
+    print('Enter a linear coefficient of the quadratic equation:')
+    response_b = input('> ')
+    print('Enter a free term of the quadratic equation:')
+    response_c = input('> ')
+
+    try:
+        coef_a = float(response_a)
+        coef_b = float(response_b)
+        coef_c = float(response_c)
+    except ValueError:
+        print('A coefficients of the quadratic equation must be real numbers')
+        sys.exit()
+
+    print(
+        'The quadratic equation with coefficients',
+        f'a = {coef_a}, b = {coef_b}, c = {coef_c} has a solution:',
+    )
+
     x1, x2 = quadratic_equation(1, -1, -6)
     print(f'x1 = {x1}, x2 = {x2}', end='\n\n')
 
-    print('2. Equation 2x^2 - 8x + 8 = 0 has two equal real roots:')
-    x1, x2 = quadratic_equation(2, -8, 8)
-    print(f'x1 = {x1}, x2 = {x2}', end='\n\n')
-
-    print('3. Equation x^2 + 2x + 10 = 0 has two complex roots:')
-    x1, x2 = quadratic_equation(1, 2, 10)
-    print(f'x1 = {x1}, x2 = {x2}', end='\n\n')
+    input('\nPress ENTER to exit...')
