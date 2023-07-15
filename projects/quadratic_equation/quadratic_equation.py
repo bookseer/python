@@ -92,8 +92,7 @@ def quadratic_equation(
 if __name__ == '__main__':
     import sys
 
-    print('Enter the coefficients of the quadratic equation:')
-    print()
+    print('The solver of quadratic equations.\n')
     print('Enter a quadratic coefficient of the quadratic equation:')
     response_a = input('> ')
     print('Enter a linear coefficient of the quadratic equation:')
@@ -115,6 +114,6 @@ if __name__ == '__main__':
     )
 
     x1, x2 = quadratic_equation(1, -1, -6)
-    print(f'x1 = {x1}, x2 = {x2}', end='\n\n')
+    print(f'x1 = {x1}, x2 = {x2}')
 
     input('\nPress ENTER to exit...')
