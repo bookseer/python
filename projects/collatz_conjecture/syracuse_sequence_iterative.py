@@ -74,24 +74,19 @@ def get_syracuse_sequence_iterative(n: int) -> list[int]:
 
 
 if __name__ == '__main__':
-    print('Examples of the Syracuse sequence.', end='\n\n')
+    import sys
 
-    test_n = 0
-    print(f'For n = {test_n}, the Syracuse sequence has the form:')
-    print(get_syracuse_sequence_iterative(test_n), end='\n\n')
+    print('Examples of the Syracuse sequence.\n')
 
-    test_n = 1
-    print(f'For n = {test_n}, the Syracuse sequence has the form:')
-    print(get_syracuse_sequence_iterative(test_n), end='\n\n')
+    print('Enter a starting number of the Syracuse sequence:')
+    response = input('> ')
 
-    test_n = 5
-    print(f'For n = {test_n}, the Syracuse sequence has the form:')
-    print(get_syracuse_sequence_iterative(test_n), end='\n\n')
+    if not response.isdecimal() or response == '0':
+        print('You must enter an integer greater than 0.')
+        sys.exit()
 
-    test_n = 27
-    print(f'For n = {test_n}, the Syracuse sequence has the form:')
-    print(get_syracuse_sequence_iterative(test_n), end='\n\n')
+    starting_number = int(response)
+    print(f'For n = {starting_number}, the Syracuse sequence has the form:')
+    print(get_syracuse_sequence_iterative(starting_number))
 
-    test_n = 150
-    print(f'For n = {test_n}, the Syracuse sequence has the form:')
-    print(get_syracuse_sequence_iterative(test_n), end='\n\n')
+    input('\nPress ENTER to exit...')

@@ -12,7 +12,7 @@ from syracuse_sequence_iterative import (
 )
 
 
-def main():
+def collatz_conjeccture() -> None:
     while True:
         print('Enter a starting number greater than 0 or QUIT:')
         response = input('> ') or 'QUIT'
@@ -49,4 +49,4 @@ every starting number eventually terminates at 1.
 '''
 
     print(annotation)
-    main()
+    collatz_conjeccture()
