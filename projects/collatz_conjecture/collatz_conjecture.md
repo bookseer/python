@@ -82,7 +82,6 @@ def get_syracuse_sequence_iterative(n: int) -> list[int]:
             n = 3 * n + 1
         syracuse_sequence.append(n)
     return syracuse_sequence
-
 ```
 
 ```python
@@ -141,7 +140,6 @@ def get_syracuse_sequence_recursive(n: int) -> list[int]:
         return [n] + get_syracuse_sequence_recursive(n // 2)
     else:
         return [n] + get_syracuse_sequence_recursive(3 * n + 1)
-
 ```
 
 **The Collatz conjecture** is that no matter from which number $n$ we start building the Syracuse sequence, sooner or later we will get one.
@@ -163,7 +161,6 @@ for item in syracuse_sequence[:-1]:
     print(str(item) + ',', end=' ', flush=True)
     time.sleep(0.10)
 print(syracuse_sequence[-1], end='\n\n')
-
 ```
 
 ```python

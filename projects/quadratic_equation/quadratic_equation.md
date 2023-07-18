@@ -110,7 +110,6 @@ def quadratic_equation(
     x_2 = (-b + sqrt_discriminant) / (2 * a)
 
     return x_1, x_2
-
 ```
 
 ```python

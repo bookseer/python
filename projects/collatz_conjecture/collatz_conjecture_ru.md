@@ -82,7 +82,6 @@ def get_syracuse_sequence_iterative(n: int) -> list[int]:
             n = 3 * n + 1
         syracuse_sequence.append(n)
     return syracuse_sequence
-
 ```
 
 ```python
@@ -141,7 +140,6 @@ def get_syracuse_sequence_recursive(n: int) -> list[int]:
         return [n] + get_syracuse_sequence_recursive(n // 2)
     else:
         return [n] + get_syracuse_sequence_recursive(3 * n + 1)
-
 ```
 
 **Гипотеза Коллатца** заключается в том, что с какого бы числа $n$ мы не начали строить сиракузскую последовательность, рано или поздно мы получим единицу.
@@ -163,7 +161,6 @@ for item in syracuse_sequence[:-1]:
     print(str(item) + ',', end=' ', flush=True)
     time.sleep(0.10)
 print(syracuse_sequence[-1], end='\n\n')
-
 ```
 
 ```python
