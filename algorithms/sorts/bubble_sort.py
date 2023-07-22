@@ -14,29 +14,29 @@ License: BSD 3 clause
 
 import typing
 
-from collections.abc import Collection
+from collections.abc import Iterable
 
 
-class Comparable(typing.Protocol):
-    def __lt__(self: 'TypeItems', other: 'TypeItems') -> bool:
+class SupportsLessThan(typing.Protocol):
+    def __lt__(self: 'SupportsLessThanT', other: 'SupportsLessThanT') -> bool:
         ...
 
 
 # Type of collection items
-TypeItems = typing.TypeVar('TypeItems', bound=Comparable)
+SupportsLessThanT = typing.TypeVar('SupportsLessThanT', bound=SupportsLessThan)
 
 
-def bubble_sort(iterable: Collection[TypeItems], /) -> list[TypeItems]:
+def bubble_sort(iterable: Iterable[SupportsLessThanT], /) -> list[SupportsLessThanT]:
     """Pure implementation of bubble sort algorithm in Python
 
     Parameters
     ----------
-    iterable : Collection[TypeItems]
+    iterable : Iterable[SupportsLessThanT]
         Some ordered collection with heterogeneous comparable items inside.
 
     Returns
     -------
-    list(TypeItems)
+    list(SupportsLessThanT)
          A new list containing all items from the `iterable` in ascending order.
 
     References
@@ -71,7 +71,7 @@ def bubble_sort(iterable: Collection[TypeItems], /) -> list[TypeItems]:
     [('alice', '2', 18), ('bob', '1', 17), ('carroll', '3', 19)]
     """
 
-    collection: list[TypeItems] = list(iterable)
+    collection: list[SupportsLessThanT] = list(iterable)
     length = len(collection)
     for i in range(length - 1):
         is_swapped = False
