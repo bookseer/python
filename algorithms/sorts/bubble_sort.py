@@ -14,7 +14,7 @@ License: BSD 3 clause
 
 import typing
 
-from collections.abc import Iterable
+from collections.abc import Collection
 
 
 class SupportsLessThan(typing.Protocol):
@@ -26,12 +26,12 @@ class SupportsLessThan(typing.Protocol):
 SupportsLessThanT = typing.TypeVar('SupportsLessThanT', bound=SupportsLessThan)
 
 
-def bubble_sort(iterable: Iterable[SupportsLessThanT], /) -> list[SupportsLessThanT]:
+def bubble_sort(iterable: Collection[SupportsLessThanT], /) -> list[SupportsLessThanT]:
     """Pure implementation of bubble sort algorithm in Python
 
     Parameters
     ----------
-    iterable : Iterable[SupportsLessThanT]
+    iterable : Collection[SupportsLessThanT]
         Some ordered collection with heterogeneous comparable items inside.
 
     Returns
