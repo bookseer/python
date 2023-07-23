@@ -69,6 +69,17 @@ def bubble_sort(iterable: Collection[SupportsLessThanT], /) -> list[SupportsLess
     ... ]
     >>> bubble_sort(student_tuples)
     [('alice', '2', 18), ('bob', '1', 17), ('carroll', '3', 19)]
+    >>> time_zones = [
+    ...     (3, 'Moscow'),
+    ...     (2, 'Berlin'),
+    ...     (1, 'London'),
+    ...     (2, 'Paris'),
+    ...     (3, 'Minsk')
+    ... ]
+    >>> bubble_sort(time_zones)  #  bubble_sort is an unstable sort
+    [(1, 'London'), (2, 'Berlin'), (2, 'Paris'), (3, 'Minsk'), (3, 'Moscow')]
+
+
     """
 
     collection: list[SupportsLessThanT] = list(iterable)

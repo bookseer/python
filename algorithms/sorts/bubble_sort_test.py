@@ -3,7 +3,7 @@
 
 """Testing Bubble Sort"""
 
-from bubble_sort import bubble_sort
+from .bubble_sort import bubble_sort
 from pytest import mark
 
 
@@ -22,6 +22,10 @@ from pytest import mark
         (
             [('bob', '1', 17), ('carroll', '3', 19), ('alice', '2', 18)],
             [('alice', '2', 18), ('bob', '1', 17), ('carroll', '3', 19)],
+        ),
+        (
+            [(3, 'Moscow'), (2, 'Berlin'), (1, 'London'), (2, 'Paris'), (3, 'Minsk')],
+            [(1, 'London'), (2, 'Berlin'), (2, 'Paris'), (3, 'Minsk'), (3, 'Moscow')],
         ),
     ],
 )
