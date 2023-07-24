@@ -424,3 +424,6 @@ TSWLatexianTemp*
 
 #JetBrains
 .idea/*
+
+# Temporary files
+*.py~
