@@ -4,7 +4,7 @@
 """Bubble Sort
 
 Project: TryPython
-A collection of educational materials for learning the Python
+A input_list of educational materials for learning the Python
 
 Author: Alexander Krasnikov aka askras
 Website: trypython.pro
@@ -22,22 +22,24 @@ class SupportsLessThan(typing.Protocol):
         ...
 
 
-# Type of collection items
+# Type of input_list items
 SupportsLessThanT = typing.TypeVar('SupportsLessThanT', bound=SupportsLessThan)
 
 
-def bubble_sort(iterable: Collection[SupportsLessThanT], /) -> list[SupportsLessThanT]:
+def bubble_sort(
+    collection: Collection[SupportsLessThanT], /
+) -> list[SupportsLessThanT]:
     """Pure implementation of bubble sort algorithm in Python
 
     Parameters
     ----------
-    iterable : Collection[SupportsLessThanT]
-        Some ordered collection with heterogeneous comparable items inside.
+    collection : input_list[SupportsLessThanT]
+        Some ordered input_list with heterogeneous comparable items inside.
 
     Returns
     -------
     list(SupportsLessThanT)
-         A new list containing all items from the `iterable` in ascending order.
+         A new list containing all items from the `collection` in ascending order.
 
     References
     ----------
@@ -55,12 +57,12 @@ def bubble_sort(iterable: Collection[SupportsLessThanT], /) -> list[SupportsLess
     True
     >>> bubble_sort([-2, 10, 16, -3, -11]) == sorted([-2, 10, 16, -3, -11])
     True
-    >>> letter_collection = ['a', 'c', 'e', 'b', 'd']
-    >>> bubble_sort(letter_collection) == sorted(letter_collection)
+    >>> letter_input_list = ['a', 'c', 'e', 'b', 'd']
+    >>> bubble_sort(letter_input_list) == sorted(letter_input_list)
     True
     >>> import random
-    >>> random_collection = random.sample(range(-50, 50), 100)
-    >>> bubble_sort(random_collection) == sorted(random_collection)
+    >>> random_input_list = random.sample(range(-50, 50), 100)
+    >>> bubble_sort(random_input_list) == sorted(random_input_list)
     True
     >>> student_tuples = [
     ...     ('bob', '1', 17),
@@ -80,17 +82,17 @@ def bubble_sort(iterable: Collection[SupportsLessThanT], /) -> list[SupportsLess
     [(1, 'London'), (2, 'Berlin'), (2, 'Paris'), (3, 'Minsk'), (3, 'Moscow')]
     """
 
-    collection: list[SupportsLessThanT] = list(iterable)
-    length = len(collection)
+    input_list: list[SupportsLessThanT] = list(collection)
+    length = len(input_list)
     for i in range(length - 1):
         is_swapped = False
         for j in range(length - 1 - i):
-            if collection[j] > collection[j + 1]:
-                collection[j], collection[j + 1] = collection[j + 1], collection[j]
+            if input_list[j] > input_list[j + 1]:
+                input_list[j], input_list[j + 1] = input_list[j + 1], input_list[j]
                 is_swapped = True
         if not is_swapped:
-            break  # Stop iteration if the collection is sorted.
-    return collection
+            break  # Stop iteration if the input_list is sorted.
+    return input_list
 
 
 if __name__ == '__main__':

@@ -8,7 +8,7 @@ from pytest import mark
 
 
 @mark.parametrize(
-    'iterable, expected',
+    'collection, expected',
     [
         ([4, 7, 2, 11, 1, 8, 0], [0, 1, 2, 4, 7, 8, 11]),
         ((4, 7, 2, 11, 1, 8, 0), [0, 1, 2, 4, 7, 8, 11]),
@@ -29,7 +29,7 @@ from pytest import mark
         ),
     ],
 )
-def test_bubble_sort(iterable, expected):
+def test_bubble_sort(collection, expected):
     """Testing bubble_sort"""
-    got = bubble_sort(iterable)
+    got = bubble_sort(collection)
     assert got == expected
