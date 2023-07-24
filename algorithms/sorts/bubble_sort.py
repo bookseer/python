@@ -78,8 +78,6 @@ def bubble_sort(iterable: Collection[SupportsLessThanT], /) -> list[SupportsLess
     ... ]
     >>> bubble_sort(time_zones)  #  bubble_sort is an unstable sort
     [(1, 'London'), (2, 'Berlin'), (2, 'Paris'), (3, 'Minsk'), (3, 'Moscow')]
-
-
     """
 
     collection: list[SupportsLessThanT] = list(iterable)
