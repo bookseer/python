@@ -4,7 +4,7 @@
 """Bubble Sort
 
 Project: TryPython
-A input_list of educational materials for learning the Python
+A collection of educational materials for learning the Python
 
 Author: Alexander Krasnikov aka askras
 Website: trypython.pro
@@ -22,24 +22,24 @@ class SupportsLessThan(typing.Protocol):
         ...
 
 
-# Type of input_list items
+# Type of `unsorted_collection` and sorted `collection` items
 SupportsLessThanT = typing.TypeVar('SupportsLessThanT', bound=SupportsLessThan)
 
 
 def bubble_sort(
-    collection: Collection[SupportsLessThanT], /
+    unsorted_collection: Collection[SupportsLessThanT], /
 ) -> list[SupportsLessThanT]:
     """Pure implementation of bubble sort algorithm in Python
 
     Parameters
     ----------
-    collection : input_list[SupportsLessThanT]
-        Some ordered input_list with heterogeneous comparable items inside.
+    unsorted_collection : Collection[SupportsLessThanT]
+        Some ordered unsorted_collection with heterogeneous comparable items inside.
 
     Returns
     -------
     list(SupportsLessThanT)
-         A new list containing all items from the `collection` in ascending order.
+         A new list containing all items from the `unsorted_collection` in ascending order.
 
     References
     ----------
@@ -57,12 +57,12 @@ def bubble_sort(
     True
     >>> bubble_sort([-2, 10, 16, -3, -11]) == sorted([-2, 10, 16, -3, -11])
     True
-    >>> letter_input_list = ['a', 'c', 'e', 'b', 'd']
-    >>> bubble_sort(letter_input_list) == sorted(letter_input_list)
+    >>> letter_unsorted_collection = ['a', 'c', 'e', 'b', 'd']
+    >>> bubble_sort(letter_unsorted_collection) == sorted(letter_unsorted_collection)
     True
     >>> import random
-    >>> random_input_list = random.sample(range(-50, 50), 100)
-    >>> bubble_sort(random_input_list) == sorted(random_input_list)
+    >>> random_unsorted_collection = random.sample(range(-50, 50), 100)
+    >>> bubble_sort(random_unsorted_collection) == sorted(random_unsorted_collection)
     True
     >>> student_tuples = [
     ...     ('bob', '1', 17),
@@ -82,20 +82,20 @@ def bubble_sort(
     [(1, 'London'), (2, 'Berlin'), (2, 'Paris'), (3, 'Minsk'), (3, 'Moscow')]
     """
 
-    input_list: list[SupportsLessThanT] = list(collection)
-    length = len(input_list)
+    collection: list[SupportsLessThanT] = list(unsorted_collection)
+    length = len(collection)
     for i in range(length - 1):
         is_swapped = False
         for j in range(length - 1 - i):
-            if input_list[j] > input_list[j + 1]:
-                input_list[j], input_list[j + 1] = input_list[j + 1], input_list[j]
+            if collection[j] > collection[j + 1]:
+                collection[j], collection[j + 1] = collection[j + 1], collection[j]
                 is_swapped = True
         if not is_swapped:
-            break  # Stop iteration if the input_list is sorted.
-    return input_list
+            break  # Stop iteration if the unsorted_collection is sorted.
+    return collection
 
 
 if __name__ == '__main__':
     user_input = input('Enter numbers separated by a comma:').strip()
     unsorted = [int(item) for item in user_input.split(',')]
-    print(*bubble_sort(unsorted), sep=',')
+    print(*bubble_sort(unsorted), sep=', ')
