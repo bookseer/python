@@ -3,8 +3,9 @@
 
 """Testing Bubble Sort"""
 
-from .bubble_sort import bubble_sort
 from pytest import mark
+
+from .bubble_sort import bubble_sort
 
 
 @mark.parametrize(
