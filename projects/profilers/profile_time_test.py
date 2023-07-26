@@ -16,5 +16,5 @@ def sleep_func(n):
 
 def test_profile_time():
     """Testing get_usage_time"""
-    profile_time_sleep_func = profile_time()(sleep_func)
+    profile_time_sleep_func = profile_time(ndigits=1)(sleep_func)
     assert profile_time_sleep_func(2) == 2

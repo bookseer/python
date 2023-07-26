@@ -19,27 +19,16 @@ jupyter:
 Для оценки времени работы функции можно использовать приведенный здесь декоратор.
 
 ```python
-# %load usage_time.py
-#!/usr/bin/env python
-
-"""Usage Time
-
-Project: TryPython
-A collection of educational materials for learning the Python
-
-Author: Alexander Krasnikov aka askras
-Website: trypython.pro
-
-License: BSD 3 clause
-"""
-
+# %load -y -n -r 14:17 usage_time.py
 import functools
 import timeit
 import typing
+```
 
-
+```python
+# %load -y -n -s get_usage_time usage_time.py
 def get_usage_time(
-    number: int = 1, setup: str = 'pass', ndigits: int = 3
+    *, number: int = 1, setup: str = 'pass', ndigits: int = 3
 ) -> typing.Callable:
     """Decorator for measuring the speed of the function (in seconds)
 
@@ -137,18 +126,6 @@ def get_usage_time(
         return wrapper
 
     return decorator
-
-
-if __name__ == '__main__':
-    import time
-
-    def sleep_func(n):
-        time.sleep(n)
-        return n
-
-    for i in range(1, 4):
-        time_sleep_func = get_usage_time(number=3)(sleep_func)
-        print(time_sleep_func(i))
 ```
 
 #### Пример использования
@@ -159,7 +136,7 @@ import random
 
 def my_func(n):
     L = [random.randint(1, 1000) for _ in range(n)]
-    return sorted(L)
+    return sum(sorted(L))
 ```
 
 ```python

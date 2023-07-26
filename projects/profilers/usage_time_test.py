@@ -16,5 +16,5 @@ def sleep_func(n):
 
 def test_get_usage_time():
     """Testing get_usage_time"""
-    get_usage_time_sleep_func = get_usage_time()(sleep_func)
+    get_usage_time_sleep_func = get_usage_time(ndigits=1)(sleep_func)
     assert get_usage_time_sleep_func(2) == 2.0

@@ -19,27 +19,20 @@ An important criterion for evaluating algorithms is their operating time.
 To estimate the running time of the function, you can use the decorator given here.
 
 ```python
-# %load profile_time.py
-#!/usr/bin/env python
-
-"""Profile Time
-
-Project: TryPython
-A collection of educational materials for learning the Python
-
-Author: Alexander Krasnikov aka askras
-Website: trypython.pro
-
-License: BSD 3 clause
-"""
-
+# %load -y -n -r 14:17 profile_time.py
 import functools
 import timeit
 import typing
+```
 
-
+```python
+# %load -y -n -s profile_time profile_time.py
 def profile_time(
-    number: int = 1, setup: str = 'pass', ndigits: int = 3
+    *,
+    number: int = 1,
+    setup: str = 'pass',
+    ndigits: int = 3,
+    output: str = '[{elapsed:0.{ndigits}f}s] {func_name}({func_args}) -> {func_result}',
 ) -> typing.Callable:
     """Decorator for profiling the speed of the function (in seconds)
 
@@ -51,6 +44,7 @@ def profile_time(
         Code executed once before timing.
     ndigits : int, default=3
         Number of decimal places in the returned value.
+    output : str, default='[{elapsed:0.8f}s] {name}({args}) -> {result}'
 
     Returns
     -------
@@ -77,10 +71,10 @@ def profile_time(
     ...
     >>> profile_time_sleep_func = profile_time()(sleep_func)
     >>> profile_time_sleep_func(2)
-    The function sleep_func(2) was executed for 2.0 seconds.
+    [2.000s] sleep_func(2) -> 2
     2
     >>> profile_time(number=5)(sleep_func)(4)
-    The function sleep_func(4) was executed for 4.0 seconds.
+    [4.000s] sleep_func(4) -> 4
     4
 
     Profiling the running time of a function for different parameter values:
@@ -90,9 +84,10 @@ def profile_time(
     ...     time.sleep(n)
     ...     return n
     ...
+    >>> output_format = 'The function {func_name}({func_args}) was executed for {elapsed:0.{ndigits}} seconds.'
     >>> for n in range(1,4):
-    ...    profile_time_sleep_func = profile_time(number=2)(sleep_func)
-    ...    print(profile_time_sleep_func(n))
+    ...    profile_time_sleep_func = profile_time(number=2, output=output_format)(sleep_func)
+    ...    profile_time_sleep_func(n)
     The function sleep_func(1) was executed for 1.0 seconds.
     1
     The function sleep_func(2) was executed for 2.0 seconds.
@@ -109,10 +104,10 @@ def profile_time(
     ...
     >>> setup = 'print("Start setup"); time.sleep(10); print("End setup")'
     >>> profile_time_sleep_func = profile_time(setup=setup)(sleep_func)
-    >>> print(profile_time_sleep_func(3))
+    >>> profile_time_sleep_func(3)
     Start setup
     End setup
-    The function sleep_func(3) was executed for 3.0 seconds.
+    [3.000s] sleep_func(3) -> 3
     3
 
     Decoding the generated function:
@@ -123,10 +118,10 @@ def profile_time(
     ...    time.sleep(n)
     ...    return n
     ...
-    >>> sleep_func(3)
+    >>> sleep_func(5)
     Start
-    The function sleep_func(3) was executed for 3.0 seconds.
-    3
+    [5s] sleep_func(5) -> 5
+    5
     """
 
     def decorator(func: typing.Callable) -> typing.Callable:
@@ -137,32 +132,24 @@ def profile_time(
                 setup=setup,
                 number=number,
             )
-            usage_time = round(usage_time / number, ndigits)
+            elapsed = round(  # pylint: disable=possibly-unused-variable
+                usage_time / number, ndigits
+            )
             # get func's params as string
             position_args = [str(param) for param in args]
             named_args = [f'{str(k)}={str(v)}' for k, v in kwargs.items()]
-            all_args = ', '.join(position_args + named_args)
-            print(
-                f'The function {func.__name__}({all_args})',
-                f'was executed for {usage_time} seconds.',
+            func_args = ', '.join(  # pylint: disable=possibly-unused-variable
+                position_args + named_args
             )
-            return func(*args, **kwargs)
+            func_name = func.__name__  # pylint: disable=possibly-unused-variable
+            func_return = func(*args, **kwargs)
+            func_result = repr(func_return)  # pylint: disable=possibly-unused-variable
+            print(output.format(**locals()))
+            return func_return
 
         return wrapper
 
     return decorator
-
-
-if __name__ == '__main__':
-    import time
-
-    def sleep_func(n):
-        time.sleep(n)
-        return n
-
-    for i in range(1, 4):
-        time_sleep_func = profile_time(number=3)(sleep_func)
-        print(time_sleep_func(i))
 ```
 
 #### Usage example
@@ -173,7 +160,7 @@ import random
 
 def my_func(n):
     L = [random.randint(1, 1000) for _ in range(n)]
-    return sorted(L)
+    return sum(sorted(L))
 ```
 
 ```python
