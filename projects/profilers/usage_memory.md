@@ -32,8 +32,6 @@ def get_usage_memory(
 ) -> typing.Callable:
     """Decorator for measuring the memory used by the code in Mebibytes (MiB)
 
-    Подробное описание
-
     Parameters
     ----------
     interval : float, optional
@@ -106,7 +104,6 @@ def get_usage_memory(
         return wrapper
 
     return decorator
-
 ```
 
 #### Usage example
@@ -130,7 +127,7 @@ import matplotlib.pyplot as plt
 
 get_memory = get_usage_memory(ndigits=3)(sum_big_list)
 
-items = range(1, 9) # multiply by 10**7
+items = range(1, 9)  # multiply by 10**7
 memory = [get_memory(i) for i in items]
 
 fig = plt.plot(items, memory, 'bo-')

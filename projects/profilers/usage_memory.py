@@ -22,8 +22,6 @@ def get_usage_memory(
 ) -> typing.Callable:
     """Decorator for measuring the memory used by the code in Mebibytes (MiB)
 
-    Подробное описание
-
     Parameters
     ----------
     interval : float, optional
