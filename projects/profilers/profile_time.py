@@ -28,13 +28,14 @@ def profile_time(
 
     Parameters
     ----------
-    number : int, default=1
+    number : int, optional
         Number of code repetitions.
-    setup : str, default='pass'
+    setup : str, optional
         Code executed once before timing.
-    ndigits : int, default=3
+    ndigits : int, optional
         Number of decimal places in the returned value.
-    output : str, default='[{elapsed:0.8f}s] {name}({args}) -> {result}'
+    output : str, optional
+        The template of the displayed message
 
     Returns
     -------
