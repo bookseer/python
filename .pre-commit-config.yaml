@@ -1,5 +1,5 @@
 default_language_version:
-    python: python3.11
+    python: python3.12
 
 # Set to true to have pre-commit stop running hooks after the first failure
 fail_fast: false #true
@@ -34,7 +34,7 @@ repos:
         description: "Uncompromising Python code formatter. "
         types: [python]
         language: python
-        language_version: python3.11
+        language_version: python3.12
         stages: [commit]
         always_run: true
 
@@ -44,7 +44,7 @@ repos:
         description: "Security code analysis with bandit."
         types: [python]
         language: python
-        language_version: python3.11
+        language_version: python3.12
         stages: [commit]
         always_run: true
         args: [./]
@@ -55,7 +55,7 @@ repos:
         description: "Static code analysis with pylint."
         types: [python]
         language: python
-        language_version: python3.11
+        language_version: python3.12
         stages: [commit]
         always_run: true
 
