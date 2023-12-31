@@ -1,30 +1,34 @@
-# Try Python
+# Программирование на Python
 
+---
 
-|[English](https://github.com/askras/trypython/blob/main/README.md)|
-|[Русский](https://github.com/askras/trypython/blob/main/README-RU.md)|
+## Лицензирование
 
+Все материалы предоставлены на условиях международной лицензии
+[Creative Commons Attribution 4.0 International](./LICENSE.txt), которая предоставляет следующие:
 
-A collection of educational materials for learning the Python programming language:
+- **Разрешения:**
+  - Коммерческое использование: лицензионные материалы и производные от них могут быть использованы в коммерческих
+  целях.
+  - Распространение: лицензируемые материалы могут распространяться любым законным образом.
+  - Изменение: лицензируемые материалы могут быть изменены.
+  - Частное использование: лицензионные материалы могут быть использованы и изменены для частного использования.
 
- - Theoretical materials;
+- **Условия:**
+  - Лицензия и уведомление об авторских правах: копия лицензии и уведомление об авторских правах должны быть приложены
+  к лицензионному материалу.
+  - Изменения состояния: изменения, внесённые в лицензионный материал, должны быть задокументированы.
 
- - Application examples;
+- **Ограничения:**:
+  - Ответственность: данная лицензия включает в себя ограничение ответственности.
+  - Использование патента: в лицензии недвусмысленно указано, что она не предоставляет никаких прав на патенты авторов.
+  - Использование товарного знака: в  лицензии прямо указано, что она не предоставляет прав на товарные знаки.
+  - Гарантии: в данной лицензии недвусмысленно указано, что она НЕ предоставляет никаких гарантий.
 
- - Tasks for independent solution.
+Следует отметить, что юридической силой обладает только
+[оригинальный текст лицензии](http://creativecommons.org/licenses/by/4.0/)
 
+---
 
-## License
-
- - The applications and their source code included in this project are released under the permissive BSD 3-Clause Clear License  and commercially usable.
-There is no warranty; not even for merchantability or fitness for a particular purpose.
-
-    - See the «Commons Deed» of the license in the file [LICENSE-BSD-3-CLAUSE-COMMONS-DEED.txt](https://github.com/askras/trypython/blob/main/LICENSE-BSD-3-CLAUSE-COMMONS-DEED.txt) for details.
-
-    - See the «Legal Code» of the license in the file [LICENSE-BSD-3-CLAUSE-LEGAL-CODE.txt](https://github.com/askras/trypython/blob/main/LICENSE-BSD-3-CLAUSE-LEGAL-CODE.txt)  for details.
-
- - In addition, you may use, copy, modify and redistribute all collection of  learning materials included in this distribution under the directory according to the terms and conditions of the Creative Commons Attribution 4.0 International License..
-
-    - See the «Commons Deed» of the license in the file [LICENSE-CC-BY-COMMONS-DEED.txt](https://github.com/askras/trypython/blob/main/LICENSE-CC-BY-COMMONS-DEED.txt) for details.
-
-    - See the «Legal Code» of the license in the file [LICENSE-CC-BY-LEGAL-CODE.txt](https://github.com/askras/trypython/blob/main/LICENSE-CC-BY-LEGAL-CODE.txt)  for details.
+Copyright (c) 2023–2024, Александр Красников.
+Все права защищены.
