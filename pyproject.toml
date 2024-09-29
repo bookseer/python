@@ -8,7 +8,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "bookseer-python"
-version = "2024.07.17"
+version = "2024.09.29"
 description = "Программирование на Pyhton"
 authors = ["Alexander Krasnikov <askrasnikov@gmail.com>"]
 maintainers = ["askras <askrasnikov@gmail.com>"]
@@ -38,7 +38,7 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.12"
 pip = "^24.0"
-lxml = "~5.2"
+lxml = "~5.3"
 
 [tool.poetry.group.jupyter.dependencies]
 jupyterlab = "~4.2"
@@ -55,15 +55,15 @@ termtosvg = "~1.1"
 
 [tool.poetry.group.test.dependencies]
 bandit = {extras = ["toml"], version = "~1.7"}
-black = "~24.4"
+black = "~24.8"
 isort = "~5.13"
-mypy = "~1.10"
-nbqa = "~1.8"
-pre-commit = "~3.7"
+mypy = "~1.11"
+nbqa = "~1.9"
+pre-commit = "~3.8"
 pre-commit-hooks = "~4.6"
-pylint = "~3.2"
-pytest = "~8.2"
-pyupgrade = "~3.16"
+pylint = "~3.3"
+pytest = "~8.3"
+pyupgrade = "~3.17"
 
 [tool.poetry.group.binder.dependencies]
 asciinema = "~2.4"
@@ -74,7 +74,7 @@ jupytext = "~1.16"
 sphinxcontrib-asciinema = "~0.4"
 sphinx-click = "~6.0"
 sphinx-inline-tabs = "~2023.4"
-sphinx-proof = "~0.1"
+sphinx-proof = "~0.2"
 sphinx-togglebutton = "~0.3"
 sphinxext-rediraffe = "~0.2"
 tqdm = "~4.66"
@@ -89,7 +89,8 @@ tqdm = "~4.66"
 [tool.poetry-exec-plugin.commands]
 # Init this repo
 install = """
-poetry install;
+poetry config warnings.export false;
+poetry install --no-root;
 pre-commit install;
 """
 
