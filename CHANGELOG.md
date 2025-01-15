@@ -32,6 +32,10 @@
 ---
 -->
 
+## 2025.01.15
+### Изменено:
+- Настройка `html.google_analytics_id` на `html.analytics.google_analytics_id`
+
 ## 2025.01.13
 ### Изменено:
 - В команду `build_boook` добавлена сборка pdf версии книги
