@@ -8,7 +8,7 @@ build-backend = "poetry.core.masonry.api"
 
 [project]
 name = "bookseer-python"
-version = "2025.02.18"
+version = "2025.02.19"
 description = "Программирование на Pyhton"
 authors = [
     {name = "Alexander Krasnikov aka askras", email = "askrasnikov@gmail.com"},
